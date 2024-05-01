@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navbar > img {
+  height: 80%;
+}
+ .navbar {
+  height: 10vh;
+  width: 100vw;
+  background-color: #d25441;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+ }
+
+ h1 {
+  font-size: 0.5 rem;
+ }
+
+ body {
+  background-color: #041C32;
+ }
+
