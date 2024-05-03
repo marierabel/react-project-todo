@@ -5,25 +5,93 @@
 }
 
 .navbar > img {
-  height: 80%;
+  height: 90%;
 }
- .navbar {
-  height: 10vh;
+.navbar {
+  height: 12vh;
   width: 100vw;
-  background-color: #d25441;
+  background-image: url("../public/pointbck.png");
+  background-size: contain;
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: absolute;
   top: 0px;
   left: 0px;
- }
+}
 
- h1 {
-  font-size: 0.5 rem;
- }
+h1 {
+  font-size: 0.4 rem;
+  color: #f98a6e;
+}
 
- body {
-  background-color: #041C32;
- }
+body {
+  background-color: #111c1f;
+}
 
+.sidebar {
+  background-color: #f98a6e;
+  width: 15vw;
+  height: 84vh;
+  position: absolute;
+  left: 0px;
+  top: 12vh;
+}
+
+.footer {
+  width: 100vw;
+  height: 4vh;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-image: url("../public/pointbck.png");
+  background-size: 40%;
+}
+
+a {
+  color: #111c1f;
+  font-size: 0.2 rem;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #ffc5b4;
+}
+
+.flex {
+  display: flex;
+  position: absolute;
+  justify-content: space-around;
+  left: 20vw;
+  top: 15vh;
+  width: 80vw;
+  height: 80vh;
+}
+
+.card {
+  color: #111c1f;
+  background-color: #fefae0;
+  width: 10vw;
+  height: 18vh;
+  border-radius: 8%;
+}
+
+.card > img {
+  width: 20%;
+  height: 20%;
+}
+
+.card > button {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.05 rem;
+  background-color: #ffc5b4;
+  color: #111c1f;
+  width: 4vw;
+  height: 3vh;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.card > button:hover {
+  background-color: #f98a6e;
+}
