@@ -1,19 +1,16 @@
-import data from "../tasks.json";
-import { useState } from "react";
 import ListItems from "./ListItems";
 
-function List() {
-  const [task, setTask] = useState(data);
+function List({ quest, setQuest }) {
   return (
     <>
       <div className="flex">
-        {task.map((item, index) => {
+        {quest.map((item, index) => {
           return (
             <ListItems
               item={item}
-              setTask={setTask}
+              setQuest={setQuest}
               index={index}
-              task={task}
+              quest={quest}
             />
           );
         })}

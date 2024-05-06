@@ -2,12 +2,12 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footbar";
 
-function AboutPage() {
+function NotFound() {
   return (
     <>
-      <p className="test">about page</p>
+      <p className="test">404 page not found</p>
     </>
   );
 }
 
-export default AboutPage;
+export default NotFound;

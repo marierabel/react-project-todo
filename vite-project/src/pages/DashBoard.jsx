@@ -1,13 +1,14 @@
+import List from "../components/List";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footbar";
 
-function AboutPage() {
+function DashBoard({ quest, setQuest }) {
   return (
     <>
-      <p className="test">about page</p>
+      <List quest={quest} setQuest={setQuest} />
     </>
   );
 }
 
-export default AboutPage;
+export default DashBoard;
