@@ -1,23 +1,15 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footbar";
 import { useNavigate } from "react-router-dom";
 
-function CreateForm({ quest, setQuest, editMode, id }) {
+function CreateForm({ quest, setQuest, editMode, id, setActive }) {
+  const navigate = useNavigate();
   const emptyForm = {
-    task: "",
-    completed: false,
-  };
-
-  const fullForm = {
-    task: quest[id].task,
-    completed: quest[id].completed,
+    task: editMode ? quest[id].task : "",
+    completed: editMode ? quest[id].completed : false,
   };
 
   console.log(editMode);
-  const [taskForm, setTaskForm] = useState(editMode ? fullForm : emptyForm);
-  const navigate = useNavigate();
+  const [taskForm, setTaskForm] = useState(emptyForm);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -58,14 +50,16 @@ function CreateForm({ quest, setQuest, editMode, id }) {
 
     setTaskForm(taskForm);
 
+    setActive(false);
+
     const newquest = quest.map((item, ind) => (ind === id ? taskForm : item));
     setQuest(newquest);
   }
 
   return (
     <>
-      <div className="test">
-        <h1>Handle your task</h1>
+      <div className={editMode ? "form" : "test"}>
+        <h1>{!editMode && "Handle your task"}</h1>
         <form method="post" onSubmit={editMode ? handleEdit : handleSubmit}>
           <label htmlFor="task">
             Task
@@ -77,15 +71,16 @@ function CreateForm({ quest, setQuest, editMode, id }) {
               value={taskForm.task}
             />
           </label>
-          <label htmlFor="completed">
+          <label htmlFor="completed" className="checkbox-wrapper-2">
             <input
               type="checkbox"
               name="completed"
               id="completed"
               onChange={handleChange}
               checked={taskForm.completed}
+              className="sc-gJwTLC ikxBAC"
             />
-            Completed
+            Done
           </label>
           <input type="submit" value={(editMode ? "Edit" : "Add") + " Task"} />
         </form>

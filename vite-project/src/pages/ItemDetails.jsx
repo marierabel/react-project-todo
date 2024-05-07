@@ -1,11 +1,9 @@
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footbar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import CreateForm from "./Form";
 
 function ItemDetails({ quest, setQuest }) {
+  const navigate = useNavigate();
   const [active, setActive] = useState(false);
   const id = useParams();
   console.log(id.index);
@@ -24,12 +22,22 @@ function ItemDetails({ quest, setQuest }) {
         >
           Edit
         </button>
+        {!active && (
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Back to the list
+          </button>
+        )}
         {active && (
           <CreateForm
             quest={quest}
             setQuest={setQuest}
             editMode={true}
             id={index}
+            setActive={setActive}
           />
         )}
       </div>

@@ -7,16 +7,18 @@ function ListItems({ item, setQuest, index, quest }) {
     <div className="card">
       <Link to={`/details/${item.id}`} key={item.task}>
         <p>{item.task}</p>
-        <img src={item.completed ? done : todo} alt="" />
       </Link>
-      <button
-        onClick={() => {
-          const newTask = quest.filter((_) => _.id !== item.id);
-          setQuest(newTask);
-        }}
-      >
-        Delete
-      </button>
+      <div className="ftcard">
+        <img src={item.completed ? done : todo} alt="" />
+        <button
+          onClick={() => {
+            const newTask = quest.filter((_) => _.id !== item.id);
+            setQuest(newTask);
+          }}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   );
 }
