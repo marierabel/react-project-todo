@@ -58,9 +58,13 @@ function CreateForm({ quest, setQuest, editMode, id, setActive }) {
 
   return (
     <>
-      <div className={editMode ? "form" : "test"}>
+      <div className={editMode ? "editform" : "test"}>
         <h1>{!editMode && "Handle your task"}</h1>
-        <form method="post" onSubmit={editMode ? handleEdit : handleSubmit}>
+        <form
+          className="form"
+          method="post"
+          onSubmit={editMode ? handleEdit : handleSubmit}
+        >
           <label htmlFor="task">
             Task
             <input
@@ -80,7 +84,7 @@ function CreateForm({ quest, setQuest, editMode, id, setActive }) {
               checked={taskForm.completed}
               className="sc-gJwTLC ikxBAC"
             />
-            Done
+            Done ?
           </label>
           <input type="submit" value={(editMode ? "Edit" : "Add") + " Task"} />
         </form>

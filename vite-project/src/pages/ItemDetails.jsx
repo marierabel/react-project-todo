@@ -11,7 +11,7 @@ function ItemDetails({ quest, setQuest }) {
 
   return (
     <>
-      <div className="test">
+      <div className="test editform">
         <p>{quest[index].task}</p>
         <p>{quest[index].completed ? "Completed" : "Not Completed"}</p>
         <button
